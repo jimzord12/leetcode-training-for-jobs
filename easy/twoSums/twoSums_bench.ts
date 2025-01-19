@@ -1,4 +1,4 @@
-import { twoSum } from "./main.ts";
+import { twoSum } from "./twoSums.ts";
 
 // Simple benchmark with a small array
 Deno.bench("twoSum - Small Array", () => {

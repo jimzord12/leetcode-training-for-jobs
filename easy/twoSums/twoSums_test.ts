@@ -1,5 +1,5 @@
 import { assertEquals } from "jsr:@std/assert";
-import { twoSum } from "./main.ts";
+import { twoSum } from "./twoSums.ts";
 
 interface Test {
   nums: number[];
