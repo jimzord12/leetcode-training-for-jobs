@@ -68,28 +68,3 @@ function romanToInt_V2(s: string): number {
 
 console.log(romanToInt("LVIII"));
 console.log(romanToInt("MCMXCIV"));
-
-function romanToInt3(s: string): number {
-  let total = 0;
-  let prev = 0;
-
-  for (let i = s.length - 1; i >= 0; i--) {
-    let curr = 0;
-    const c = s.charCodeAt(i);
-
-    // Inline numeral mapping
-    curr += c === 73 ? 1 : 0; // 'I'
-    curr += (c === 86) * 5; // 'V'
-    curr += (c === 88) * 10; // 'X'
-    curr += (c === 76) * 50; // 'L'
-    curr += (c === 67) * 100; // 'C'
-    curr += (c === 68) * 500; // 'D'
-    curr += (c === 77) * 1000; // 'M'
-
-    // Fully branchless subtraction logic using bitwise operations
-    total += curr - (((prev - curr) >> 31) & curr);
-    prev = curr;
-  }
-
-  return total;
-}
