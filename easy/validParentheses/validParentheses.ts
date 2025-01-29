@@ -42,9 +42,9 @@ function isValid(s: string): boolean {
   if (s.length % 2 !== 0) return false;
   const lifoQueue: string[] = [];
   const mapping: { [key: string]: string } = {
-    "(": ")",
-    "[": "]",
-    "{": "}",
+    '(': ')',
+    '[': ']',
+    '{': '}',
   };
 
   for (let i = 0; i < s.length; i++) {
@@ -58,12 +58,10 @@ function isValid(s: string): boolean {
   return lifoQueue.length === 0;
 }
 
-console.log("#1 | ", isValid("()"));
-console.log("-------------------------------------");
-console.log("#2 | ", isValid("()[]{}"));
-console.log("-------------------------------------");
-console.log("#3 | ", isValid("(]"));
-console.log("-------------------------------------");
-console.log("#4 | ", isValid("([])"));
-console.log("-------------------------------------");
-console.log("#5 | ", isValid("(([]){})"));
+console.log('#2 | ', isValid('()[]{}'));
+console.log('-------------------------------------');
+console.log('#3 | ', isValid('(]'));
+console.log('-------------------------------------');
+console.log('#4 | ', isValid('([])'));
+console.log('-------------------------------------');
+console.log('#5 | ', isValid('(([]){})'));
